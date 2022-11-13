@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    
+</head>
+<body>
+    <header class="p-3 text-bg-dark">
+        <div class="container">
+          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+    
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+              <li><a href="/bb1" class="nav-link px-2 text-white">BB1</a></li>
+              <li><a href="/bb2" class="nav-link px-2 text-white">BB2</a></li>
+            </ul>
+    
+            <div class="text-end">
+              <a href="/logout" class="btn btn-outline-light me-2">Logout</a>
+            </div>
+          </div>
+        </div>
+      </header>
+      <br>
+      {% if session['username'] %}
+      <h3 class="content-welcome" align="center">
+          Welcome <br>
+          {{ session['username'] }} <br>
+          to School management system
+      </h3>
+      {% else %}
+      <p class="content-welcome">
+          Please login
+      </p>
+      {% endif %}
+</body>
+</html>

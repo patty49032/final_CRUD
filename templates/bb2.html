@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BB1</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.1/font/bootstrap-icons.css">
+    <style>
+        .button-pink {
+            color: #ffffff;
+            background-color: #FA897B;
+        }
+    </style>
+</head>
+<body>
+    <h3 class="content-welcome" align="center">
+        BB2
+    </h3>
+    <table class="table table-bordered table-Success table-hover table-striped">
+        <tr>
+            <th>No.</th>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Action</th>
+
+        </tr>
+        {% for result in datas %}
+        <tr class="table-danger">
+            
+            <td>{{result.id}}</td>
+            <td>{{result.bid}}</td>
+            <td>{{result.name}}</td>
+            <td>
+                    <a href="/bb2-edit/{{result.id}}" class="btn btn-warning"><i class="bi bi-pen-fill"></i>Edit</a>
+                    <a href="/bb2-delete/{{result.id}}" class="btn btn-danger"><i class="bi bi-trash"></i>Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+
+    <div class="text-end">
+        <a href="/index" class="btn">Back</a>
+        <a href="/bb2-add-view" class="btn button-pink">Add</a>
+    </div>
+</body>
+</html>

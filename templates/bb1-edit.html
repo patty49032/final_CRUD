@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BB1-EDIT</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+
+        <div class="card text-md-start">
+          <form class="row g-3" action="{{ url_for('bb1update') }}" method="POST">
+            {% for result in datas %}
+            <div class="card-body">
+            <div class="row my-1">
+              <div class="col-md-6">
+                <label for="fullname" class="col-form-label">ID</label>
+                <input type="text"  readonly  class="form-control" name="id" value="{{result.id}}">
+              </div>
+            </div>
+
+            <div class="row my-1">
+                <div class="col-md-6">
+                  <label for="fullname" class="col-form-label">Full Name</label>
+                  <input type="text"  class="form-control" name="bid" value="{{result.bid}}">
+                </div>
+              </div>
+            
+            <div class="row my-1">
+                <div class="col-md-6">
+                  <label for="fullname" class="col-form-label">Full Name</label>
+                  <input type="text"  class="form-control" name="name" value="{{result.name}}">
+                </div>
+              </div>
+
+          </div>
+          {% endfor %}
+          <button type="submit" class="btn btn-success my-3">Edit</button>
+          </form>
+          </div>
+        </div>
+        
+        <div class="text-start">
+            <a href="/bb1" class="btn button-pink my-3">Back</a>
+        </div>
+    </div>
+</body>
+</html>
